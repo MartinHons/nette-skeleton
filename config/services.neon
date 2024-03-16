@@ -1,6 +1,8 @@
 services:
 	- App\Router\RouterFactory::createRouter
-
+	nette.latteFactory:
+		setup:
+			- addFilter(dateTime, App\Latte\DateTimeFilter())
 
 search:
 	-	in: %appDir%
