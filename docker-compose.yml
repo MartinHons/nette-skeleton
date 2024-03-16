@@ -1,0 +1,32 @@
+name: nette_vite_skeleton
+
+services:
+  web:
+    image: martinhons/apache_php83
+    container_name: nette_vite_skeleton_web
+    ports:
+      - "8080:80"
+    volumes:
+      - ".:/var/www/localhost/htdocs"
+    networks:
+      - nette_vite_skeleton_network
+
+  db:
+    image: mariadb:latest
+    container_name: nette_vite_skeleton_db
+    restart: always
+    environment:
+      MARIADB_USER: nette_vite_skeleton_user
+      MARIADB_PASSWORD: 123
+      MARIADB_DATABASE: nette_vite_skeleton_db
+      MARIADB_ROOT_PASSWORD: 123
+    ports:
+      - "3306:3306"
+    volumes:
+      - "./_db:/var/lib/mysql"
+    networks:
+      - nette_vite_skeleton_network
+
+networks:
+  nette_vite_skeleton_network:
+    name: nette_vite_skeleton_network

@@ -1,0 +1,1 @@
+console.log('Ahoj, já jsem admin')

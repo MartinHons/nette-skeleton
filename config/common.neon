@@ -1,0 +1,26 @@
+parameters:
+
+
+application:
+	errorPresenter: Error
+	mapping:
+		*: App\Modules\*Module\Presenters\*Presenter
+
+
+latte:
+	strictTypes: yes
+
+
+session:
+	expiration: 14 days
+
+
+di:
+	export:
+		parameters: no
+		tags: no
+
+
+tracy:
+	bar:
+		- App\Tracy\VitePanel\VitePanel
