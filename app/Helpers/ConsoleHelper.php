@@ -21,4 +21,17 @@ class ConsoleHelper
 		}
         fclose($targetFile);
     }
+
+    // Vrátí názvy všech existujících modulů
+	public function getModules(): array
+	{
+		$folders = array_filter(scandir('app/Modules'), fn($folder) => str_ends_with($folder, 'Module'));
+		sort($folders);
+		$modules = [];
+		$i = 1;
+		foreach($folders as $folder) {
+			$modules[$i++] = $folder;
+		}
+		return $modules;
+	}
 }

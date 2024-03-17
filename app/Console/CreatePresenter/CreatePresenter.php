@@ -22,7 +22,7 @@ use Throwable;
     name: 'create:presenter',
     description: 'Vytvoří nový presenter',
 )]
-final class CreateComponent extends Command
+final class CreateModule extends Command
 {
 	public function __construct(
 		private ConsoleHelper $consoleHelper
@@ -47,7 +47,6 @@ final class CreateComponent extends Command
 			return Command::SUCCESS;
 
 		} catch (Throwable $e) {
-			$output->writeln($e->getMessAGE());
 			return Command::FAILURE;
 		}
 	}
@@ -55,7 +54,7 @@ final class CreateComponent extends Command
 	// Vrátí název modulu který uživatel vybral
 	private function moduleQuestion(InputInterface $input, OutputInterface $output): string
 	{
-		$modules = $this->getModules();
+		$modules = $this->consoleHelper->getModules();
 		if (!count($modules)) {
 			$output->writeln('<error>Aplikace nemá žádné moduly. Vytvořte nejdříve nějaký pomocí create:module</error>');
 			return Command::FAILURE;
@@ -64,19 +63,6 @@ final class CreateComponent extends Command
 		$question = new ChoiceQuestion('Vyberte modul do kterého bude nový presenter patřit:', $modules);
 		$question->setErrorMessage('Vybírejte pouze z možností 1-'.count($modules));
 		return $helper->ask($input, $output, $question);
-	}
-
-	// Vrátí názvy všech existujících presenterů
-	private function getModules(): array
-	{
-		$folders = array_filter(scandir('app/Modules'), fn($folder) => str_ends_with($folder, 'Module'));
-		sort($folders);
-		$modules = [];
-		$i = 1;
-		foreach($folders as $folder) {
-			$modules[$i++] = $folder;
-		}
-		return $modules;
 	}
 
 	// Vrátí název presenteru kterých chce uživatel vytvořit
@@ -133,7 +119,7 @@ final class CreateComponent extends Command
 	// Vytvoří presenter
 	private function createPresenter(string $moduleName, string $presenterName): void
 	{
-		$sourceFile = 'app/Console/CreatePresenter/Presenter.template';
+		$sourceFile = 'app/Console/CreatePresenter/Templates/Presenter.php.template';
 		$targetFile = 'app/Modules/'.$moduleName.'/Presenters/'.$presenterName.'.php';
 		$replace = [
 			'<module>' => $moduleName,
