@@ -1,0 +1,4 @@
+# services:
+# 	- App\Helpers\MultiFactory(
+# 		emailHelper: @App\Helpers\EmailHelper,
+# 	)
