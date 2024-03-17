@@ -1,0 +1,12 @@
+<?php
+
+declare(strict_types=1);
+
+namespace App\Modules\<module>\Presenters\<presenter>;
+
+use App\Presenters\BasePresenter;
+
+
+final class <presenter> extends BasePresenter
+{
+}

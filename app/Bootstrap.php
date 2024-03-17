@@ -26,6 +26,7 @@ class Bootstrap
 		$configurator->addConfig($appDir . '/config/services.neon');
 		$configurator->addConfig($appDir . '/config/local.neon');
 		$configurator->addConfig($appDir . '/config/multifactory.neon');
+		$configurator->addConfig($appDir . '/config/console.neon');
 
 		define('DEBUG_MODE', $configurator->isDebugMode());
 
