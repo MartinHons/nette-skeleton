@@ -7,4 +7,3 @@ console:
 
 services:
 	- App\Console\CreateComponent\CreateComponent
-	- App\Console\CreatePresenter\CreatePresenter

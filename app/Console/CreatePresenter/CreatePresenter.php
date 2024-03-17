@@ -37,13 +37,13 @@ final class CreateComponent extends Command
 		$presenterName = $this->presenterQuestion($input, $output, $moduleName);
 
         $helper = $this->getHelper('question');
-        $question = new ConfirmationQuestion('Bude vytvořen presenter '.$moduleName.'/'.$presenterName.'. Chcete pokračovat? [a/n]: ', false, '/^a/i');
+        $question = new ConfirmationQuestion('Bude vytvořen presenter <fg=green;options=bold>'.$moduleName.'/'.$presenterName.'</>. Chcete pokračovat? [a/n]: ', false, '/^a/i');
         if (!$helper->ask($input, $output, $question)) {
             return Command::SUCCESS;
         }
 		try {
 			$this->createPresenter($moduleName, $presenterName);
-			$output->writeln('<info>Byl vytvořen presenter '.$moduleName.'/'.$presenterName.'.</info>');
+			$output->writeln('<bg=green;options=bold>Byl vytvořen presenter '.$moduleName.'/'.$presenterName.'.</>');
 			return Command::SUCCESS;
 
 		} catch (Throwable $e) {
@@ -82,7 +82,7 @@ final class CreateComponent extends Command
 	// Vrátí název presenteru kterých chce uživatel vytvořit
 	private function presenterQuestion(InputInterface $input, OutputInterface $output, string $moduleName): string
 	{
-		$question = new Question('Zadejte název nového presenteru: ');
+		$question = new Question('Zadejte název nového presenteru: '.$moduleName.'/');
 		$helper = $this->getHelper('question');
 
 		do {
