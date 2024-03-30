@@ -11,37 +11,23 @@
         <div class="loader"></div>
     </div>
 
-	<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
-
-	{if 0}
-		<div id="login-page">
-			<div class="wrapper">
-				<div class="card">
-					<div class="card-body">
-						<div class="logo"><i class="ti ti-code"></i>Dev Admin</div>
-						<form>
-							<div class="form-floating mb-4">
-								<input type="text" class="form-control" id="username" placeholder="">
-								<label for="username">Přihlašovací jméno</label>
-							</div>
-							<div class="form-floating mb-3">
-								<input type="password" class="form-control" id="password" placeholder="">
-								<label for="password">Heslo</label>
-							</div>
-							<div class="buttons">
-								<a href="">Zapomenuté heslo</a>
-								<input class="btn btn-primary" type="submit" value="Přihlásit se">
-							</div>
-						</form>
-					</div>
-				</div>
-				<a n:href=":Admin:Dashboard" class="text-muted backlink">
-					<i class="ti ti-arrow-left"></i>
-					Zpět na prezentaci
-				</a>
-			</div>
+	<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">
+		<div class="alert bg-info">
+			{$flash->message}
 		</div>
+	</div>
+
+	{if $presenter->templateWrapperType->value === 'centered'}
+
+		<div id="centered-wrapper">
+			<div id="content">
+				{include content}
+			</div>
+			{include 'footer.latte'}
+		</div>
+
 	{else}
+
 		<div id="main-wrapper">
 			{include 'sidebar.latte'}
 
@@ -52,13 +38,10 @@
 						{include content}
 					</div>
 				</div>
-				<div id="footer">
-					<div class="container-fluid">
-						© {date('Y')} Martin Hons
-					</div>
-				</div>
+				{include 'footer.latte'}
 			</div>
 		</div>
+
 	{/if}
 
 	{block scripts}

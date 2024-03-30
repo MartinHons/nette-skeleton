@@ -1,4 +1,5 @@
 services:
 	- App\Helpers\MultiFactory(
-		userSettingsControl: @App\Modules\AdminModule\Components\UserSettingsControl\UserSettingsControl
+		userSettingsControl: @App\Modules\AdminModule\Components\UserSettingsControl\UserSettingsControl,
+		loginControl: @App\Modules\AdminModule\Components\Log\LoginControl\LoginControl
 	)

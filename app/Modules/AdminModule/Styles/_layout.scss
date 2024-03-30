@@ -1,7 +1,10 @@
 body {
     background: $bg-color;
-    padding-left: $sidebar-width;
-    overflow: hidden;
+
+    &:has(#main-wrapper) {
+      padding-left: $sidebar-width;
+      overflow: hidden;
+    }
 
     &, #sidebar {
       transition: all ease-in-out .5s;

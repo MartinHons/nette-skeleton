@@ -1,0 +1,28 @@
+{block content}
+<div id="login-page">
+    <div class="wrapper">
+        <div class="card">
+            <div class="card-body">
+                <div class="logo"><i class="ti ti-code"></i>Dev Admin</div>
+                {form loginForm}
+                    <div class="form-floating mb-4">
+                        {input username}
+                        {label username /}
+                    </div>
+                    <div class="form-floating mb-3">
+                        {input password}
+                        {label password /}
+                    </div>
+                    <div class="buttons">
+                        <a href="{plink Log:forgot}">Zapomenuté heslo</a>
+                        {input send}
+                    </div>
+                {/form}
+            </div>
+        </div>
+        <a href="{plink :Admin:Dashboard:}" class="text-muted backlink">
+            <i class="ti ti-arrow-left"></i>
+            Zpět na prezentaci
+        </a>
+    </div>
+</div>

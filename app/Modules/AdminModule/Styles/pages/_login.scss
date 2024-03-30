@@ -15,8 +15,10 @@
 
             .logo {
                 @extend %logo;
+                font-size: $h2-font-size;
                 justify-content: center;
                 margin-bottom: $container-padding-x * .5;
+                padding-block: $container-padding-x * .5;
 
             }
 

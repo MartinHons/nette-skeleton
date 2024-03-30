@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace App\Presenters;
 
+use App\Enum\TemplateWrapperType;
 use App\Helpers\MultiFactory;
+use App\Modules\AdminModule\Presenters\LogPresenter;
 use App\Nextras\Orm;
 use Nette\Application\UI\Presenter;
 use Nette\Http\Request;
@@ -14,6 +16,8 @@ use Nette\Utils\Strings;
 
 abstract class BasePresenter extends Presenter
 {
+    public TemplateWrapperType $templateWrapperType = TemplateWrapperType::Main;
+
     public function __construct(
         private Request $request,
         protected MultiFactory $multiFactory,
@@ -27,6 +31,12 @@ abstract class BasePresenter extends Presenter
     protected function beforeRender(): void
     {
         parent::beforeRender();
+        $this->initAssets();
+        $this->template->logPresenter = ($this->presenter::class === LogPresenter::class);
+    }
+
+    private function initAssets(): void
+    {
         $module = Strings::before($this->getName(), ':') . 'Module';
         $vite = ($this->request->getCookie('viteDev') === 'true');
         $this->template->scripts = '';
@@ -62,3 +72,4 @@ abstract class BasePresenter extends Presenter
         }
     }
 }
+

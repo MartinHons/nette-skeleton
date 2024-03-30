@@ -9,7 +9,7 @@ window.onload = () => {
           spinner.style.opacity = opacity;
        }
        else {
-            spinner.style.display = 'none'
+            spinner?.remove()
        }
     }, 25)
 }

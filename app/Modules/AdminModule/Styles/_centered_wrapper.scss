@@ -1,0 +1,17 @@
+
+#centered-wrapper {
+
+
+
+    #content {
+        min-height: calc(100vh - $basic-height);
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #footer {
+        width: 100%;
+    }
+}
