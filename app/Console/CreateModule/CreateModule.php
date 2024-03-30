@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Console\CreateComponent;
 
-use App\Helpers\ConsoleHelper;
+use App\Console\ConsoleHelper;
 use Exception;
 use Nette\Utils\FileSystem;
 use Nette\Utils\Strings;

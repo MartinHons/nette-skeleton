@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Console\CreateComponent;
 
-use App\Helpers\ConsoleHelper;
+use App\Console\ConsoleHelper;
+use App\Console\Types\AppElement;
 use Exception;
-use Nette\Utils\FileSystem;
 use Nette\Utils\Strings;
 use Nette\Utils\Validators;
 use Symfony\Component\Console\Command\Command;

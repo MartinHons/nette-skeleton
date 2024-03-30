@@ -2,12 +2,23 @@
 
 declare(strict_types=1);
 
-namespace App\Helpers;
+namespace App\Console;
 
+use App\Enum\AppElementType;
 use Nette\Utils\FileSystem;
 
 class ConsoleHelper
 {
+	public function normalizeName(string $name, AppElementType $appElementType): string
+	{
+		// TODO zde se mohou validovat obecné věci jako test php class
+
+		return match ($appElementType) {
+			AppElementType::Module => $this->normalizeModuleName(),
+			AppElementType::Presenter => $this->normalizePresenterName()
+		};
+	}
+
 	public function replaceAndSave(string $sourceFile, string $targetFile, array $replace)
     {
         $replaceFrom = array_keys($replace);
