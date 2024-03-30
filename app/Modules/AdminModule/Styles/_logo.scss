@@ -1,0 +1,13 @@
+%logo {
+    display: flex;
+    align-items: center;
+    font-size: $h4-font-size;
+    font-weight: bold;
+    user-select: none;
+
+    i {
+        margin-right: $container-padding-x * .5;
+        color: $primary;
+        font-size: 2rem;
+    }
+}

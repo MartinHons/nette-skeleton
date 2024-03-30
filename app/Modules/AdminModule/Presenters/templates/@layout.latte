@@ -1,24 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="cs">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasty Admin</title>
 	{$styles|noescape}
-	<title>{ifset title}{include title|stripHtml} | {/ifset}Nette Web</title>
 </head>
-
 <body>
+    <div id="spinner">
+        <div class="loader"></div>
+    </div>
+
 	<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
 
-	{include content}
-	{block scripts}
+	{if 0}
+		<div id="login-page">
+			<div class="wrapper">
+				<div class="card">
+					<div class="card-body">
+						<div class="logo"><i class="ti ti-code"></i>Dev Admin</div>
+						<form>
+							<div class="form-floating mb-4">
+								<input type="text" class="form-control" id="username" placeholder="">
+								<label for="username">Přihlašovací jméno</label>
+							</div>
+							<div class="form-floating mb-3">
+								<input type="password" class="form-control" id="password" placeholder="">
+								<label for="password">Heslo</label>
+							</div>
+							<div class="buttons">
+								<a href="">Zapomenuté heslo</a>
+								<input class="btn btn-primary" type="submit" value="Přihlásit se">
+							</div>
+						</form>
+					</div>
+				</div>
+				<a n:href=":Admin:Dashboard" class="text-muted backlink">
+					<i class="ti ti-arrow-left"></i>
+					Zpět na prezentaci
+				</a>
+			</div>
+		</div>
+	{else}
+		<div id="main-wrapper">
+			{include 'sidebar.latte'}
 
-	{*
-	<script src="https://unpkg.com/nette-forms@3/src/assets/netteForms.js"></script>
-	<script type="module" src="http://localhost:5173/src/scripts/app.ts"></script>
-	*}
-	{$scripts|noescape}
+			<div id="content-wrapper">
+				{include 'topbar.latte'}
+				<div id="content">
+					<div class="container">
+						{include content}
+					</div>
+				</div>
+				<div id="footer">
+					<div class="container-fluid">
+						© {date('Y')} Martin Hons
+					</div>
+				</div>
+			</div>
+		</div>
+	{/if}
+
+	{block scripts}
+		{$scripts|noescape}
 	{/block}
+
 </body>
 </html>

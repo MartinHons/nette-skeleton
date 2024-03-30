@@ -1,0 +1,96 @@
+{block content}
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <ul class="nav nav-underline" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#general">
+                            <i class="ti ti-user"></i>
+                            Obecné
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#password">
+                            <i class="ti ti-lock"></i>
+                            Hesla
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body">
+                <div class="tab-content">
+                    <div class="tab-pane active" id="general" role="tabpanel">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <form class="card">
+                                    <div class="card-header">
+                                        <i class="ti ti-user-square"></i>Profilový obrázek
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="text-center mb-3">
+                                            <img class="rounded-pill" src="https://colorlib.com/polygon/cooladmin/images/icon/avatar-01.jpg">
+                                        </div>
+                                        <p class="mb-2">Nahrávaný soubor musí splňovat následující podmínky:</p>
+                                        <ul class="ps-3 mb-0">
+                                            <li>Rozlišení musí být alespoň 300x300px</li>
+                                            <li>Velikost souboru musí být maximálně 1MB</li>
+                                            <li>Formát souboru musí být JPG, BMP, PNG nebo GIF</li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-footer">
+                                        <button class="btn btn-outline-danger">Smazat</button>
+                                        <button class="btn btn-primary">Nahrát</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-lg-6">
+                                <form class="card">
+                                    <div class="card-header">
+                                        <i class="ti ti-user-square"></i>Základní data
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="text-center">
+                                            <div class="form-check form-switch mb-3">
+                                                <div>Osoba</div>
+                                                <input class="form-check-input" type="checkbox" role="switch" checked>
+                                                <div>Firma</div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="form-floating mb-3">
+                                                    <input type="text" class="form-control" id="username" placeholder="">
+                                                    <label for="username">Přihlašovací jméno</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="form-floating mb-3">
+                                                    <input type="text" class="form-control" id="first_name" placeholder="">
+                                                    <label for="first_name">Jméno</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="form-floating mb-3">
+                                                    <input type="text" class="form-control" id="surname" placeholder="">
+                                                    <label for="surname">Příjmení</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer">
+                                        <div></div>
+                                        <input class="btn btn-success" type="submit" value="Uložit">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="password" role="tabpanel">..sss.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

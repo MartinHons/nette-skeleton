@@ -4,9 +4,30 @@ declare(strict_types=1);
 
 namespace App\Modules\AdminModule\Presenters;
 
+use App\Entity\User\Type;
+use App\Entity\User\User;
+use App\Enum\UserType;
+use App\Helpers\MultiFactory;
+use App\Nextras\Orm;
 use App\Presenters\BasePresenter;
-use DateTime;
+use DateTimeImmutable;
+use Nette\Database\Explorer;
+use Nette\Http\Request;
 
 final class DashboardPresenter extends BasePresenter
 {
+
+    public function actionDefault(): void
+    {
+        //bdump($this->orm);
+
+        $user = new User();
+
+        $user->name = 'Martin';
+        $user->created = new DateTimeImmutable;
+        $user->type = UserType::Person;
+
+        $this->orm->persist($user);
+        $this->orm->flush();
+    }
 }

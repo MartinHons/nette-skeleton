@@ -1,0 +1,30 @@
+.form-floating {
+    .form-control {
+        outline: 0;
+        border-color: rgba(0,0,0,0.1);
+        height: $form-control-height;
+        min-height: $form-control-height;
+        border-radius: $form-control-height;
+        padding-inline: $form-control-height * .5 !important;
+        padding-top: $form-control-height * .5 !important;
+
+        &:focus {
+            box-shadow: none;
+            border-color: $primary;
+        }
+    }
+
+
+    label {
+        padding: 0;
+        height: $form-control-height;
+        display: flex;
+        align-items: center;
+        padding-left: $form-control-height * .5;
+
+        &::after {
+            background-color: transparent !important;
+        }
+    }
+
+}

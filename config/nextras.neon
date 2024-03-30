@@ -1,0 +1,9 @@
+extensions:
+    nextras.orm: Nextras\Orm\Bridges\NetteDI\OrmExtension
+    nextras.dbal: Nextras\Dbal\Bridges\NetteDI\DbalExtension
+
+nextras.orm:
+    model: App\Nextras\Orm
+
+services:
+    - App\Entity\User\UserRepository

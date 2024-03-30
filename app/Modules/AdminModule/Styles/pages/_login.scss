@@ -1,0 +1,42 @@
+
+#login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    inset: 0;
+
+    .wrapper {
+        width: 100%;
+        max-width: 25rem;
+
+        .card {
+            margin-bottom: $container-padding-x * .25;
+
+            .logo {
+                @extend %logo;
+                justify-content: center;
+                margin-bottom: $container-padding-x * .5;
+
+            }
+
+            .buttons {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+
+                a {
+                    font-size: $font-size-sm;
+                }
+            }
+        }
+
+        .backlink {
+            font-size: $font-size-sm;
+
+            &:hover {
+                color: $primary !important;
+            }
+        }
+    }
+}

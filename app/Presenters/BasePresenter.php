@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Presenters;
 
+use App\Helpers\MultiFactory;
+use App\Nextras\Orm;
 use Nette\Application\UI\Presenter;
 use Nette\Http\Request;
 use Nette\Utils\FileSystem;
@@ -13,7 +15,9 @@ use Nette\Utils\Strings;
 abstract class BasePresenter extends Presenter
 {
     public function __construct(
-        private Request $request
+        private Request $request,
+        protected MultiFactory $multiFactory,
+        protected Orm $orm
     )
     {
         parent::__construct();

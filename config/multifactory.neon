@@ -1,4 +1,4 @@
-# services:
-# 	- App\Helpers\MultiFactory(
-# 		emailHelper: @App\Helpers\EmailHelper,
-# 	)
+services:
+	- App\Helpers\MultiFactory(
+		userSettingsControl: @App\Modules\AdminModule\Components\UserSettingsControl\UserSettingsControl
+	)

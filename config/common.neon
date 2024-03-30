@@ -14,6 +14,8 @@ latte:
 session:
 	expiration: 14 days
 
+php:
+	date.timezone: Europe/Prague
 
 di:
 	export:

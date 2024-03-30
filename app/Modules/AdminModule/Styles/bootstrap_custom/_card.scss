@@ -1,0 +1,56 @@
+.card {
+    border: none;
+    box-shadow: 0px 2px 10px 0px rgba(58, 53, 65, 0.1);
+    height: 100%;
+    border-radius: $sidebar-item-height * .5;
+
+    .card-header {
+        font-weight: bold;
+        background: transparent;
+        height: $basic-height * .75;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid rgba(0,0,0,0.04);
+
+        > i {
+            margin-right: $container-padding-x * .25;
+        }
+
+
+        &:has(.nav-underline) {
+            padding: 0;
+            .nav-underline {
+                height: 100%;
+                gap: 0;
+
+                .nav-item {
+
+                    .nav-link {
+                        color: $body-color;
+                        height: 100%;
+                        padding-inline: $container-padding-x * .5;
+
+                        &.active {
+                            border-color: $primary;
+                            color: $primary;
+                        }
+
+                        &:not(.active):hover {
+                            border-color: transparent;
+                            opacity: 0.75;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .card-footer {
+        background: transparent;
+        height: $basic-height * .75;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 1px solid rgba(0,0,0,0.04);
+    }
+}
