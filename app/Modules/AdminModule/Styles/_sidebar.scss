@@ -16,6 +16,11 @@
     nav {
         display: flex;
         flex-direction: column;
+        height: calc(100vh - $basic-height);
+        max-height: calc(100vh - $basic-height);
+        overflow: auto;
+        @extend %scrollbar;
+
         a {
             color: $body-color;
             padding-left: $container-padding-x;
@@ -25,7 +30,7 @@
             text-decoration: none;
             border-radius: 0 $sidebar-item-height $sidebar-item-height 0 ;
             width: calc(100% - $container-padding-x);
-            height: $sidebar-item-height;
+            min-height: $sidebar-item-height;
             margin-block: .25rem;
             transition: all ease .3s;
 
@@ -48,5 +53,34 @@
                 margin-right: $container-padding-x * .5;
             }
         }
+
+        .divider {
+            position: relative;
+            height: $sidebar-item-height;
+            span {
+                font-size: $font-size-sm;
+                background: $bg-color;
+                display: flex;
+                position: absolute;
+                align-items: center;
+                z-index: 10;
+                padding-inline: $container-padding-x * .25;
+                left: 50%;
+                transform: translateX(-50%);
+                height: $sidebar-item-height;
+            }
+
+            &::after {
+                content: '';
+                z-index: 9;
+                position: absolute;
+                left: 0;
+                top: 50%;
+                width: 100%;
+                height: 1px;
+                background: #e2e8f0;
+            }
+        }
     }
+
 }

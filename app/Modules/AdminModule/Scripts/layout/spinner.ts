@@ -1,6 +1,7 @@
 window.onload = () => {
 
     const spinner = document.getElementById('spinner')
+    const sidebar = document.getElementById('sidebar')
     let opacity = 1
 
     setInterval(function() {
@@ -10,6 +11,9 @@ window.onload = () => {
        }
        else {
             spinner?.remove()
+            sidebar.style.transition = 'all ease-in-out .5s'
+            document.body.style.transition = 'all ease-in-out .5s'
        }
     }, 25)
+
 }

@@ -11,10 +11,17 @@
         <div class="loader"></div>
     </div>
 
-	<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">
-		<div class="alert bg-info">
-			{$flash->message}
-		</div>
+	<div id="toast-container" class="d-none">
+		{foreach $flashes as $flash}
+			<div class="toast {$flash->type}">
+				<div class="icon">
+					<i class="ti ti-check"></i>
+				</div>
+				<div class="message">
+					{$flash->message}
+				</div>
+			</div>
+		{/foreach}
 	</div>
 
 	{if $presenter->templateWrapperType->value === 'centered'}

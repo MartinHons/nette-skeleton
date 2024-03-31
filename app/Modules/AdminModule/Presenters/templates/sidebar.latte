@@ -5,15 +5,29 @@
             <i class="ti ti-layout-dashboard"></i>
             <span>Dashboard</span>
         </a>
-        <a n:href="User:" n:class="isLinkCurrent('User:') ? active">
-            <i class="ti ti-settings"></i>
-            <span>Nastavení uživatele</span>
-        </a>
 
         <a n:href="Log:in" n:class="isLinkCurrent('Log:In') ? active">
             <i class="ti ti-login"></i>
             <span>Login</span>
         </a>
+
+        <div class="divider">
+            <span>
+                Nástroje
+            </span>
+        </div>
+        <a href=""><i class="ti ti-photo"></i><span>Grafika</span></a>
         <a href=""><i class="ti ti-dots"></i><span>Trošku delší název položky</span></a>
+
+        <div class="divider">
+            <span>
+                Nastavení
+            </span>
+        </div>
+
+        <a n:href="User:" n:class="isLinkCurrent('User:') ? active">
+            <i class="ti ti-users"></i>
+            <span>Uživatelé</span>
+        </a>
     </nav>
 </aside>
