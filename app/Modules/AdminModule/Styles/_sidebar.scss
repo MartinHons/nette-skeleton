@@ -56,20 +56,19 @@
 
         .divider {
             position: relative;
-            height: $sidebar-item-height;
+            min-height: $sidebar-item-height * .75;
             span {
                 font-size: $font-size-sm;
                 background: $bg-color;
+                font-weight: bold;
                 display: flex;
-                position: absolute;
                 align-items: center;
+                position: absolute;
                 z-index: 10;
+                left: $container-padding-x * .75;
                 padding-inline: $container-padding-x * .25;
-                left: 50%;
-                transform: translateX(-50%);
-                height: $sidebar-item-height;
+                height: $sidebar-item-height * .75;
             }
-
             &::after {
                 content: '';
                 z-index: 9;

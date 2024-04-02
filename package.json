@@ -7,8 +7,9 @@
   "devDependencies": {
     "bootstrap": "^5.3.3",
     "fast-glob": "^3.3.2",
+    "naja": "^3.0.0",
+    "nette-forms": "github:nette/forms",
     "sass": "^1.72.0",
-    "sweetalert2": "^11.10.7",
     "vite": "^5.1.6"
   }
 }

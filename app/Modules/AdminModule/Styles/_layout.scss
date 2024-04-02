@@ -35,7 +35,7 @@ body {
               margin-top: $container-padding-x;
               min-height: calc(100vh - $basic-height * 2 - $container-padding-x);
 
-              .container {
+              .container, .container-fluid {
                 padding-inline: $container-padding-x;
               }
             }
