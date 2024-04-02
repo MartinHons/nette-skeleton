@@ -1,0 +1,12 @@
+{extends $originalTemplate}
+
+{block table-class}table table-striped{/block}
+
+{block icon-sort}<i class="ti ti-arrows-up-down"></i>{/}
+{block icon-sort-up}<i class="ti ti-sort-ascending"></i>{/}
+{block icon-sort-down}<i class="ti ti-sort-descending"></i>{/}
+
+
+{define col-created}
+	{$item->created|dateTime}
+{/define}

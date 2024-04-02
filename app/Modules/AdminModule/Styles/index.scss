@@ -1,7 +1,8 @@
 @import url('https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css');
 
 @import "./bootstrap";
-@import "./variables";
+@import "../../../../node_modules/ublaboo-datagrid/assets/datagrid.css";
+@import "../../../../node_modules/ublaboo-datagrid/assets/datagrid-spinners.css";
 @import "./logo";
 @import "./scrollbar";
 @import "./spinner";

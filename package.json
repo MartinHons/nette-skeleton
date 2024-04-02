@@ -7,8 +7,12 @@
   "devDependencies": {
     "bootstrap": "^5.3.3",
     "fast-glob": "^3.3.2",
+    "jquery": "^3.7.1",
+    "naja": "^3.0.0",
+    "nette-forms": "github:nette/forms",
     "sass": "^1.72.0",
     "sweetalert2": "^11.10.7",
+    "ublaboo-datagrid": "^6.9.1",
     "vite": "^5.1.6"
   }
 }
