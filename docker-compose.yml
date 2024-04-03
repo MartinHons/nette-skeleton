@@ -2,7 +2,8 @@ name: nette_vite_skeleton
 
 services:
   web:
-    image: martinhons/apache_php83
+    build:
+      context: ./.docker/webserver/
     container_name: nette_vite_skeleton_web
     ports:
       - "8080:80"
@@ -23,7 +24,7 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - "./_db:/var/lib/mysql"
+      - "./.db:/var/lib/mysql"
     networks:
       - nette_vite_skeleton_network
 
