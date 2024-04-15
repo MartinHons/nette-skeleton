@@ -6,6 +6,7 @@ namespace App\Console;
 
 use App\Enum\AppElementType;
 use Nette\Utils\FileSystem;
+use Symfony\Component\Process\Process;
 
 class ConsoleHelper
 {
@@ -44,5 +45,14 @@ class ConsoleHelper
 			$modules[$i++] = $folder;
 		}
 		return $modules;
+	}
+
+	public function runScript(string $scriptPath): void
+	{
+		$process = new Process([$scriptPath]);
+        $process->start();
+        foreach ($process as $data) {
+            echo $data;
+        }
 	}
 }

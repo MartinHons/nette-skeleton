@@ -1,0 +1,1 @@
+docker exec -t nette_vite_skeleton_web vendor/bin/tester .

@@ -17,5 +17,7 @@ apk --no-cache --update add  \
     php83-pdo \
     php83-tokenizer
 
+ln -s /usr/bin/php83 /usr/bin/php
+
 rm -rf /tmp/*
 rm -rf /var/cache/apk/*

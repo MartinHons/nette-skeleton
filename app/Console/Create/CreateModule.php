@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Console\CreateComponent;
+namespace App\Console\Create;
 
 use App\Console\ConsoleHelper;
 use Exception;
@@ -21,7 +21,7 @@ use Throwable;
     name: 'create:module',
     description: 'Vytvoří nový modul',
 )]
-final class CreateComponent extends Command
+final class CreateModule extends Command
 {
 	public function __construct(
 		private ConsoleHelper $consoleHelper
