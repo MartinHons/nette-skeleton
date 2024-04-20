@@ -9,10 +9,12 @@ use App\Helpers\MultiFactory;
 use App\Modules\AdminModule\Presenters\LogPresenter;
 use App\Nextras\Orm;
 use Nette\Application\UI\Presenter;
+use Nette\HtmlStringable;
 use Nette\Http\Request;
 use Nette\Utils\FileSystem;
 use Nette\Utils\Html;
 use Nette\Utils\Strings;
+use stdClass;
 
 abstract class BasePresenter extends Presenter
 {
@@ -71,5 +73,16 @@ abstract class BasePresenter extends Presenter
             }
         }
     }
+
+
+    public function flashMessage(string|stdClass|HtmlStringable $message, string $type = 'info'): stdClass
+	{
+		if ($this->isAjax()) {
+			$this->redrawControl('flashes');
+		}
+
+		return parent::flashMessage($message, $type);
+	}
+
 }
 

@@ -2,5 +2,7 @@ services:
 	- App\Helpers\MultiFactory(
 		userSettingsControl: @App\Modules\AdminModule\Components\UserSettingsControl\UserSettingsControl,
 		userListControl: @App\Modules\AdminModule\Components\UserListControl\UserListControl,
-		loginControl: @App\Modules\AdminModule\Components\Log\LoginControl\LoginControl
+		loginControl: @App\Modules\AdminModule\Components\Log\LoginControl\LoginControl,
+		timeTrackerDayControl: @App\Modules\AdminModule\Components\TimeTracker\TimeTrackerDayControl\TimeTrackerDayControl,
+		timeTrackerLineControl: @App\Modules\AdminModule\Components\TimeTracker\TimeTrackerLineControl\TimeTrackerLineControl,
 	)

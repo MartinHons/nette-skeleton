@@ -1,0 +1,18 @@
+{block content}
+
+<tr n:snippet="line">
+    <td>Daily</td>
+    <td>
+        <i class="ti ti-report"></i>
+    </td>
+    <td class="fw-bold text-end">04:05</td>
+    <td>
+        <a n:href="runningClick! !$running" class="ajax">
+            {if $running}
+                <i class="ti ti-player-pause"></i>
+            {else}
+                <i class="ti ti-player-play"></i>
+            {/if}
+        </a>
+    </td>
+</tr>

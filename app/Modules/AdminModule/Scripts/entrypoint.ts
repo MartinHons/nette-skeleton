@@ -1,5 +1,7 @@
 import 'bootstrap'
+import naja from 'naja';
 
+naja.initialize();
 
 import './layout/topbar'
 import './layout/spinner'
