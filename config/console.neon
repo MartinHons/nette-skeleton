@@ -6,4 +6,4 @@ console:
 	autoExit: true
 
 services:
-	- App\Console\CreateComponent\CreateComponent
+	#- App\Console\CreateComponent\CreateComponent

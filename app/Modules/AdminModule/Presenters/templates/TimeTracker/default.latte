@@ -1,11 +1,10 @@
 {block content}
 <div class="container">
     <div class="row">
-        <div class="col-12">
-            {control timeTrackerDay}
-        </div>
-        <div class="col-12">
-            {control timeTrackerDay}
-        </div>
+        {foreach [1,2,3] as $day}
+            <div class="col-12">
+                {control 'timeTrackerDay-'.$day}
+            </div>
+        {/foreach}
     </div>
 </div>

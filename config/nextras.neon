@@ -6,4 +6,4 @@ nextras.orm:
     model: App\Nextras\Orm
 
 services:
-    - App\Entity\User\UserRepository
+    #- App\Entity\User\UserRepository
