@@ -1,57 +1,54 @@
 <!DOCTYPE html>
 <html lang="cs">
-<head>
+  <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dev Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Dashboard - Tabler - Premium and Open Source dashboard template with responsive and high quality UI.</title>
 	{$styles|noescape}
-</head>
-<body>
-    <div id="spinner">
-        <div class="loader"></div>
-    </div>
+  </head>
+  <body>
 
-	<div id="toast-container" class="d-none">
-		{foreach $flashes as $flash}
-			<div class="toast {$flash->type}">
-				<div class="icon">
-					<i class="ti ti-check"></i>
-				</div>
-				<div class="message">
-					{$flash->message}
-				</div>
+
+	{*foreach $flashes as $flash}
+		<div class="toast {$flash->type}">
+			<div class="icon">
+				<i class="ti ti-check"></i>
 			</div>
-		{/foreach}
-	</div>
+			<div class="message">
+				{$flash->message}
+			</div>
+		</div>
+	{/foreach*}
 
 	{if $presenter->templateWrapperType->value === 'centered'}
+		<div class="page page-center">
+				{include content}
+		</div>
+	{else}
 
-		<div id="centered-wrapper">
-			<div id="content">
+		<div class="page">
+			{include 'sidebar.latte'}
+
+		<div class="page-wrapper">
+			{include 'topbar.latte'}
+			<!-- Page header -->
+			<!-- Page body -->
+			<div class="page-body">
 				{include content}
 			</div>
 			{include 'footer.latte'}
 		</div>
-
-	{else}
-
-		<div id="main-wrapper">
-			{include 'sidebar.latte'}
-
-			<div id="content-wrapper">
-				{include 'topbar.latte'}
-				<div id="content">
-					{include content}
-				</div>
-				{include 'footer.latte'}
-			</div>
 		</div>
 
 	{/if}
 
+
+
+
+
 	{block scripts}
 		{$scripts|noescape}
 	{/block}
-
-</body>
+  </body>
 </html>

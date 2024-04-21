@@ -1,28 +1,37 @@
 {block content}
-<div id="login-page">
-    <div class="wrapper">
-        <div class="card">
-            <div class="card-body">
-                <div class="logo"><i class="ti ti-code"></i>Dev Admin</div>
-                {form loginForm}
-                    <div class="form-floating mb-4">
-                        {input username}
-                        {label username /}
-                    </div>
-                    <div class="form-floating mb-3">
-                        {input password}
-                        {label password /}
-                    </div>
-                    <div class="buttons">
-                        <a href="{plink Log:forgot}">Zapomenuté heslo</a>
-                        {input send}
-                    </div>
-                {/form}
+<div class="container container-tight py-4">
+
+    <div class="text-center mb-0">
+        <h1 class="navbar-brand navbar-brand-autodark">
+            <div class="logo d-flex align-items-center h1">
+                <i class="ti ti-code me-2"></i>
+                Dev Admin
             </div>
+        </h1>
+    </div>
+    <div class="card card-md">
+        <div class="card-body">
+            <h2 class="h2 text-center mb-4">Přihlášení</h2>
+            {form loginForm}
+                <div class="mb-3">
+                    {label username class => 'form-label' /}
+                    {input username}
+                </div>
+                <div class="mb-2">
+                    <label class="form-label">
+                        <span class="form-label-description">
+                        <a href="{plink Log:forgot}">Zapomenuté heslo</a>
+                        </span>
+                    </label>
+                    <div class="mb-3">
+                        {label password class => 'form-label' /}
+                        {input password}
+                    </div>
+                </div>
+                <div class="form-footer text-center">
+                    {input send}
+                </div>
+            {/form}
         </div>
-        <a href="{plink :Admin:Dashboard:}" class="text-muted backlink">
-            <i class="ti ti-arrow-left"></i>
-            Zpět na prezentaci
-        </a>
     </div>
 </div>

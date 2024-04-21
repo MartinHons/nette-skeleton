@@ -1,40 +1,40 @@
-<aside id="sidebar">
-    <div class="logo"><i class="ti ti-code"></i>Dev Admin</div>
-    <nav>
-        <a n:href="Dashboard:" n:class="isLinkCurrent('Dashboard:') ? active">
-            <i class="ti ti-layout-dashboard"></i>
-            <span>Dashboard</span>
-        </a>
-
-        <a n:href="Log:in" n:class="isLinkCurrent('Log:In') ? active">
-            <i class="ti ti-login"></i>
-            <span>Login</span>
-        </a>
-
-        <div class="divider">
-            <span>
-                Nástroje
-            </span>
+<aside class="navbar navbar-vertical navbar-expand-lg navbar-transparent">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar-menu" aria-controls="sidebar-menu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <h1 class="navbar-brand navbar-brand-autodark">
+            <div class="logo d-flex align-items-center">
+                <i class="ti ti-code me-2"></i>
+                Dev Admin
+            </div>
+        </h1>
+        <div class="collapse navbar-collapse" id="sidebar-menu">
+            <ul class="navbar-nav pt-lg-3">
+                <li n:class="nav-item, isLinkCurrent('Dashboard:') ? active">
+                    <a n:href="Dashboard:" n:class="nav-link, isLinkCurrent('Dashboard:') ? active">
+                        <span class="nav-link-icon d-md-none d-lg-inline-block"><i class="icon ti ti-layout-dashboard"></i></span>
+                        <span class="nav-link-title">Dashboard</span>
+                    </a>
+                </li>
+                <li n:class="nav-item, isLinkCurrent('User:') ? active">
+                    <a n:href="User:" n:class="nav-link, isLinkCurrent('Dashboard:') ? active">
+                        <span class="nav-link-icon d-md-none d-lg-inline-block"><i class="icon ti ti-users"></i></span>
+                        <span class="nav-link-title">Uživatelé</span>
+                    </a>
+                </li>
+                <li n:class="nav-item, dropdown, isLinkCurrent('TimeTracker:') ? active">
+                    <a class="nav-link dropdown-toggle" href="#navbar-help" data-bs-toggle="dropdown" data-bs-auto-close="false" role="button">
+                        <span class="nav-link-icon d-md-none d-lg-inline-block"><i class="icon ti ti-tools"></i></span>
+                        <span class="nav-link-title">Nástroje</span>
+                    </a>
+                    <div n:class="dropdown-menu, isLinkCurrent('TimeTracker:') ? show">
+                        <a n:class="dropdown-item, isLinkCurrent('TimeTracker:') ? active" n:href="TimeTracker:">
+                            Time Tracker
+                        </a>
+                    </div>
+                </li>
+            </ul>
         </div>
-        <a n:href="TimeTracker:" n:class="isLinkCurrent('TimeTracker:') ? active">
-            <i class="ti ti-clock"></i>
-            <span>Time tracker</span>
-        </a>
-        <a href=""><i class="ti ti-photo"></i><span>Grafika</span></a>
-        <a href=""><i class="ti ti-lock"></i><span>Trošku delší název položky</span></a>
-        <a href=""><i class="ti ti-photo"></i><span>Tesovací položka</span></a>
-        <a href=""><i class="ti ti-home"></i><span>Trošku delší název položky</span></a>
-
-        <div class="divider">
-            <span>
-                Nastavení
-            </span>
-        </div>
-
-        <a n:href="User:" n:class="isLinkCurrent('User:') ? active">
-            <i class="ti ti-users"></i>
-            <span>Uživatelé</span>
-        </a>
-        <a href=""><i class="ti ti-photo"></i><span>Nastavní položka</span></a>
-    </nav>
+    </div>
 </aside>

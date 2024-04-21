@@ -1,12 +1,49 @@
-@import url('https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css');
+@import "core";
 
-@import "./bootstrap";
-@import "./variables";
-@import "./logo";
-@import "./scrollbar";
-@import "./spinner";
-@import "./layout";
-@import "./sidebar";
-@import "./topbar";
-@import "./footer";
-@import "./pages/login";
+.page {
+    .page-wrapper {
+        > header {
+            .dropdown-menu {
+                min-width: 20rem;
+                &#user-drowdown-menu {
+                    .avatar {
+                        width: 7rem;
+                        height: 7rem;
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 992px) {
+        aside .navbar-brand {
+            background: var(--tblr-navbar-bg);
+            box-shadow: inset 0 calc(-1 * var(--tblr-navbar-border-width)) 0 0 var(--tblr-navbar-border-color);
+            --tblr-navbar-bg: var(--tblr-bg-surface);
+            --tblr-navbar-border-width: var(--tblr-border-width);
+            --tblr-navbar-active-border-color: var(--tblr-primary);
+            --tblr-navbar-active-bg: rgba(0, 0, 0, 0.06);
+            --tblr-navbar-color: var(--tblr-body-color);
+            --tblr-navbar-border-color: var(--tblr-border-color);
+            box-shadow: inset 0 calc(-1 * var(--tblr-navbar-border-width)) 0 0 var(--tblr-navbar-border-color);
+            background: var(--tblr-navbar-bg);
+        }
+    }
+
+    .page-body {
+        .card {
+            height: 100%;
+        }
+    }
+}
+
+
+
+.navbar-brand {
+    .logo {
+        i {
+            font-size: 2rem;
+            color: $primary;
+        }
+    }
+}
