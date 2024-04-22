@@ -1,10 +1,148 @@
 {block content}
 <div class="container">
+    <div class="page-header">
+        <div class="row g-2 align-items-center">
+            <div class="col">
+                <div class="page-pretitle">Time Tracker</div>
+                <h2 class="page-title">Přehled</h2>
+            </div>
+            <div class="col-auto ms-auto">
+                <div class="btn-list">
+                    <a href="#" class="btn btn-success">
+                        <i class="icon ti ti-user-plus"></i>
+                        Nový uživatel
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="row">
-        {foreach [1,2,3] as $day}
+        <div class="col-4">
+            <div class="card">
+                <div id="carousel-months" class="carousel slide card-header" data-bs-ride="carousel">
+                    <a class="carousel-control-prev" href="#carousel-months" role="button" data-bs-slide="prev">
+                        <i class="icon ti ti-chevron-left text-secondary"></i>
+                    </a>
+                    <a class="carousel-control-next" href="#carousel-months" role="button" data-bs-slide="next">
+                        <i class="icon ti ti-chevron-right text-secondary"></i>
+                    </a>
+                    <div class="carousel-inner text-center">
+                        <div class="carousel-item">Listopad 2023</div>
+                        <div class="carousel-item">Prosinec 2023</div>
+                        <div class="carousel-item">Leden 2024</div>
+                        <div class="carousel-item">Únor 2024</div>
+                        <div class="carousel-item">Březen 2024</div>
+                        <div class="carousel-item active">Duben 2024</div>
+                    </div>
+                </div>
+                <div class="card-body d-flex justify-content-between">
+                        <div class="avatar avatar-sm rounded-circle" type="button" data-bs-target="#carousel-months" data-bs-slide-to="0">Lis</div>
+                        <div class="avatar avatar-sm rounded-circle" type="button" data-bs-target="#carousel-months" data-bs-slide-to="1">Pro</div>
+                        <div class="avatar avatar-sm rounded-circle" type="button" data-bs-target="#carousel-months" data-bs-slide-to="2">Led</div>
+                        <div class="avatar avatar-sm rounded-circle" type="button" data-bs-target="#carousel-months" data-bs-slide-to="3">Ún</div>
+                        <div class="avatar avatar-sm rounded-circle" type="button" data-bs-target="#carousel-months" data-bs-slide-to="4">Bře</div>
+                        <div class="avatar avatar-sm rounded-circle active" type="button" data-bs-target="#carousel-months" data-bs-slide-to="5">Dub</div>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <div class="d-flex justify-content-between">
+                            <div>Fond pracovní doby</div>
+                            <div>176 h</div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="d-flex justify-content-between">
+                            <div>Odpracováno</div>
+                            <div>25,5 h</div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="d-flex justify-content-between">
+                            <div>Zbývá</div>
+                            <div>102,5 h</div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="d-flex justify-content-between">
+                            <div>Průměr na den</div>
+                            <div>8,24 h</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="card">
+                <table class="table w-100">
+                    <thead>
+                        <tr>
+                            <th>Pondělí</th>
+                            <th>Úterý</th>
+                            <th>Středa</th>
+                            <th>Čtvrtek</th>
+                            <th>Pátek</th>
+                            <th>Sobota</th>
+                            <th>Neděle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                1
+                            </td>
+                            <td>8:05</td>
+                            <td>8:05</td>
+                            <td>8:05</td>
+                            <td>8:05</td>
+                            <td>0:00</td>
+                            <td>0:00</td>
+                        </tr>
+                        <tr>
+                            <td>8:05</td>
+                            <td>8:05</td>
+                            <td>8:05</td>
+                            <td>8:05</td>
+                            <td>8:05</td>
+                            <td>0:00</td>
+                            <td>0:00</td>
+                        </tr>
+                        <tr>
+                            <td>8:05</td>
+                            <td>8:05</td>
+                            <td>8:05</td>
+                            <td>8:05</td>
+                            <td>8:05</td>
+                            <td>0:00</td>
+                            <td>0:00</td>
+                        </tr>
+                        <tr>
+                            <td>8:05</td>
+                            <td>8:05</td>
+                            <td>8:05</td>
+                            <td>8:05</td>
+                            <td>8:05</td>
+                            <td>0:00</td>
+                            <td>0:00</td>
+                        </tr>
+                        <tr>
+                            <td>8:05</td>
+                            <td>8:05</td>
+                            <td>8:05</td>
+                            <td>8:05</td>
+                            <td>8:05</td>
+                            <td>0:00</td>
+                            <td>0:00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        {*foreach [1,2,3] as $day}
             <div class="col-12">
                 {control 'timeTrackerDay-'.$day}
             </div>
-        {/foreach}
+        {/foreach*}
     </div>
 </div>
