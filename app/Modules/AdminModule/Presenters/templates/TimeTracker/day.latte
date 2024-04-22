@@ -1,0 +1,175 @@
+{block content}
+<div class="container">
+    <div class="page-header">
+        <div class="row g-2 align-items-center">
+            <div class="col">
+                <div class="page-pretitle">Time Tracker</div>
+                <h2 class="page-title">Přehled</h2>
+            </div>
+            <div class="col-auto ms-auto">
+                <div class="btn-list">
+                    <a href="#" class="btn btn-success">
+                        <i class="icon ti ti-user-plus"></i>
+                        Nový uživatel
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <div class="card">
+                <div id="carousel-months" class="carousel slide card-header" data-bs-ride="carousel">
+                    <a class="carousel-control-prev" href="#carousel-months" role="button" data-bs-slide="prev">
+                        <i class="icon ti ti-chevron-left text-secondary"></i>
+                    </a>
+                    <a class="carousel-control-next" href="#carousel-months" role="button" data-bs-slide="next">
+                        <i class="icon ti ti-chevron-right text-secondary"></i>
+                    </a>
+                    <div class="carousel-inner text-center">
+                        <div class="carousel-item">
+                            Pondělí
+                            <div class="small text-secondary">22. dubna</div>
+                        </div>
+                        <div class="carousel-item">
+                            Úterý
+                            <div class="small text-secondary">23. dubna</div>
+                        </div>
+                        <div class="carousel-item">
+                            Středa
+                            <div class="small text-secondary">24. dubna</div>
+                        </div>
+                        <div class="carousel-item">
+                            Čtvrtek
+                            <div class="small text-secondary">25. dubna</div>
+                        </div>
+                        <div class="carousel-item">
+                            Pátek
+                            <div class="small text-secondary">26. dubna</div>
+                        </div>
+                        <div class="carousel-item">
+                            Sobota
+                            <div class="small text-secondary">27. dubna</div>
+                        </div>
+                        <div class="carousel-item active">
+                            Neděle
+                            <div class="small text-secondary">28. dubna</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body d-flex justify-content-between">
+                        <div class="avatar avatar-sm rounded-circle" type="button" data-bs-target="#carousel-months" data-bs-slide-to="0">Po</div>
+                        <div class="avatar avatar-sm rounded-circle" type="button" data-bs-target="#carousel-months" data-bs-slide-to="1">Út</div>
+                        <div class="avatar avatar-sm rounded-circle" type="button" data-bs-target="#carousel-months" data-bs-slide-to="2">St</div>
+                        <div class="avatar avatar-sm rounded-circle" type="button" data-bs-target="#carousel-months" data-bs-slide-to="3">Čt</div>
+                        <div class="avatar avatar-sm rounded-circle" type="button" data-bs-target="#carousel-months" data-bs-slide-to="4">Pá</div>
+                        <div class="avatar avatar-sm rounded-circle" type="button" data-bs-target="#carousel-months" data-bs-slide-to="5">So</div>
+                        <div class="avatar avatar-sm rounded-circle active" type="button" data-bs-target="#carousel-months" data-bs-slide-to="6">Ne</div>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <div class="d-flex justify-content-between">
+                            <div>Start pracovního dne</div>
+                            <div>8:04</div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="d-flex justify-content-between">
+                            <div>Čas od startu</div>
+                            <div>2:54</div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="d-flex justify-content-between">
+                            <div>Odpracováno</div>
+                            <div>2:54</div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="d-flex justify-content-between">
+                            <div>Zbytek do konce pracovní doby</div>
+                            <div>6:05</div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="d-flex justify-content-between">
+                            <div>Zbytek do splnění denního průměru</div>
+                            <div>6:24</div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="card-body">
+                </div>
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="card">
+                <table class="table w-100 mb-0">
+                    <thead>
+                        <tr>
+                            <th>Úkol</th>
+                            <th class="text-center">Čas</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {for $i = 0; $i < 6; $i++}
+                            <tr  class="align-middle">
+                                <td>
+                                    <div class="w-100" contenteditable="true">Lorem ipsumit ss ohohp oh ssdsdf sss</div>
+                                </td>
+                                <td class="text-center">
+                                    4:23<span class="small text-secondary">:23</span>
+                                </td>
+                                <td>
+                                    <div class="d-flex justify-content-end">
+                                        <a href="#" class="switch-icon switch-icon-scale" data-bs-toggle="switch-icon">
+                                            <span class="switch-icon-a  text-black opacity-25">
+                                                <i class="icon ti ti-file-report"></i>
+                                            </span>
+                                            <span class="switch-icon-b text-primary">
+                                                <i class="icon ti ti-file-report"></i>
+                                            </span>
+                                        </a>
+                                        <a href="#" type="button" class="ms-3 text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Smazat úkol">
+                                            <i class="icon ti ti-trash"></i>
+                                        </a>
+                                        <a href="#" class="ms-3 switch-icon switch-icon-flip" data-bs-toggle="switch-icon">
+                                            <span class="switch-icon-a  text-black">
+                                                <i class="icon ti ti-player-play"></i>
+                                            </span>
+                                            <span class="switch-icon-b text-black">
+                                                <i class="icon ti ti-player-pause"></i>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        {/for}
+                    </tbody>
+                </table>
+                <div class="card-body">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Nový úkol">
+                        <button type="button" class="btn btn-outline-success">Přidat</button>
+                        <button type="button" class="btn btn-outline-success dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="visually-hidden">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Daily</a></li>
+                            <li><a class="dropdown-item" href="#">Retro app</a></li>
+                            <li><a class="dropdown-item" href="#">Administrativa</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        {*foreach [1,2,3] as $day}
+            <div class="col-12">
+                {control 'timeTrackerDay-'.$day}
+            </div>
+        {/foreach*}
+    </div>
+</div>

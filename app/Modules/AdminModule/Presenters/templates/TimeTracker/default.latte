@@ -27,21 +27,44 @@
                         <i class="icon ti ti-chevron-right text-secondary"></i>
                     </a>
                     <div class="carousel-inner text-center">
-                        <div class="carousel-item">Listopad 2023</div>
-                        <div class="carousel-item">Prosinec 2023</div>
-                        <div class="carousel-item">Leden 2024</div>
-                        <div class="carousel-item">Únor 2024</div>
-                        <div class="carousel-item">Březen 2024</div>
-                        <div class="carousel-item active">Duben 2024</div>
+                        <div class="carousel-item">
+                            Říjen
+                            <div class="small text-secondary">2023</div>
+                        </div>
+                        <div class="carousel-item">
+                            Listopad
+                            <div class="small text-secondary">2023</div>
+                        </div>
+                        <div class="carousel-item">
+                            Prosinec
+                            <div class="small text-secondary">2023</div>
+                        </div>
+                        <div class="carousel-item">
+                            Leden
+                            <div class="small text-secondary">2024</div>
+                        </div>
+                        <div class="carousel-item">
+                            Únor
+                            <div class="small text-secondary">2024</div>
+                        </div>
+                        <div class="carousel-item">
+                            Březen
+                            <div class="small text-secondary">2024</div>
+                        </div>
+                        <div class="carousel-item active">
+                            Duben
+                            <div class="small text-secondary">2024</div>
+                        </div>
                     </div>
                 </div>
                 <div class="card-body d-flex justify-content-between">
-                        <div class="avatar avatar-sm rounded-circle" type="button" data-bs-target="#carousel-months" data-bs-slide-to="0">Lis</div>
-                        <div class="avatar avatar-sm rounded-circle" type="button" data-bs-target="#carousel-months" data-bs-slide-to="1">Pro</div>
-                        <div class="avatar avatar-sm rounded-circle" type="button" data-bs-target="#carousel-months" data-bs-slide-to="2">Led</div>
-                        <div class="avatar avatar-sm rounded-circle" type="button" data-bs-target="#carousel-months" data-bs-slide-to="3">Ún</div>
-                        <div class="avatar avatar-sm rounded-circle" type="button" data-bs-target="#carousel-months" data-bs-slide-to="4">Bře</div>
-                        <div class="avatar avatar-sm rounded-circle active" type="button" data-bs-target="#carousel-months" data-bs-slide-to="5">Dub</div>
+                        <div class="avatar avatar-sm rounded-circle" type="button" data-bs-target="#carousel-months" data-bs-slide-to="0">Říj</div>
+                        <div class="avatar avatar-sm rounded-circle" type="button" data-bs-target="#carousel-months" data-bs-slide-to="1">Lis</div>
+                        <div class="avatar avatar-sm rounded-circle" type="button" data-bs-target="#carousel-months" data-bs-slide-to="2">Pro</div>
+                        <div class="avatar avatar-sm rounded-circle" type="button" data-bs-target="#carousel-months" data-bs-slide-to="3">Led</div>
+                        <div class="avatar avatar-sm rounded-circle" type="button" data-bs-target="#carousel-months" data-bs-slide-to="4">Ún</div>
+                        <div class="avatar avatar-sm rounded-circle" type="button" data-bs-target="#carousel-months" data-bs-slide-to="5">Bře</div>
+                        <div class="avatar avatar-sm rounded-circle active" type="button" data-bs-target="#carousel-months" data-bs-slide-to="6">Dub</div>
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">
@@ -86,53 +109,17 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>
-                                1
-                            </td>
-                            <td>8:05</td>
-                            <td>8:05</td>
-                            <td>8:05</td>
-                            <td>8:05</td>
-                            <td>0:00</td>
-                            <td>0:00</td>
-                        </tr>
-                        <tr>
-                            <td>8:05</td>
-                            <td>8:05</td>
-                            <td>8:05</td>
-                            <td>8:05</td>
-                            <td>8:05</td>
-                            <td>0:00</td>
-                            <td>0:00</td>
-                        </tr>
-                        <tr>
-                            <td>8:05</td>
-                            <td>8:05</td>
-                            <td>8:05</td>
-                            <td>8:05</td>
-                            <td>8:05</td>
-                            <td>0:00</td>
-                            <td>0:00</td>
-                        </tr>
-                        <tr>
-                            <td>8:05</td>
-                            <td>8:05</td>
-                            <td>8:05</td>
-                            <td>8:05</td>
-                            <td>8:05</td>
-                            <td>0:00</td>
-                            <td>0:00</td>
-                        </tr>
-                        <tr>
-                            <td>8:05</td>
-                            <td>8:05</td>
-                            <td>8:05</td>
-                            <td>8:05</td>
-                            <td>8:05</td>
-                            <td>0:00</td>
-                            <td>0:00</td>
-                        </tr>
+                        {var $k = 30}
+                        {for $i = 1; $i <= 5; $i++}
+                            <tr>
+                                {for $j = 1; $j <= 7; $j++}
+                                    <td>{$k++}</td>
+                                    {if $k > 31}
+                                        {var $k=1}
+                                    {/if}
+                                {/for}
+                            </tr>
+                        {/for}
                     </tbody>
                 </table>
             </div>
